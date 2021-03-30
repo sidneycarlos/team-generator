@@ -22,7 +22,7 @@ var group2 = [];
     }
 }*/
 
-for (let i = 0; i < 14; i++) {
+/*for (let i = 0; i < 14; i++) {
     if (i < 8) {
         group1[i] = generatePosition()
     }
@@ -31,9 +31,20 @@ for (let i = 0; i < 14; i++) {
         group2[i] = generatePosition()
     }
 }
+// à chaque tour il faut veiller à ce qu'un nombre soit différent*/
 
-// à chaque tour il faut veiller à ce qu'un nombre soit différent
-console.log(group1)
-console.log(group2)
 
 //TODO essayer de passer dans la variable attd avec une boucle for...in
+// à chaque tour il faut veiller à ce qu'un nombre soit différent
+for (let i in attd) {
+    if (i < 8) {
+        group1[i] = attd[generatePosition()]
+        console.log(generatePosition())
+
+    }
+    if (i > 8) {
+        group2[i] = attd[generatePosition()]
+    }
+}
+console.log(group1)
+console.log(group2)
