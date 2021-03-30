@@ -8,28 +8,30 @@ var attd = {
 var group1 = [];
 var group2 = [];
 
-/*function generatePosition() {
-    var randomiser = Math.floor(Math.random()*15);
-    return randomiser;
-
-}*/
 
 
-//chercher dans la variable les index correspondants aux nombres générés et n'en conserver que 8
-
- //générer un nombre entre 0 et 14 qui correspond à l'index de attendant
+ //générer un nombre entre 0 et 14 qui correspondra à l'index des attd
  function generatePosition() {
     var randomiser = Math.floor(Math.random()*15);
+       return randomiser;
+}
+//stocker dans le tableau group1 les 8 premières valeurs aléatoires qu'on considèrera comme index du tableau attd
+/*function getFirstEight() {
     for (let i = 0; i < 8; i++) {
-        group1[i] = randomiser // j'itère dans ma variable attendant
-
-//TODO => pour cela il faut que je stocke dans un tableau les nombres issu du randomiser
-//ensuite le tableau group1 ne devra stocker que les 8 premières itérations 
-
+        group1[i] = generatePosition()
     }
-    return group1;
+}*/
+
+for (let i = 0; i < 14; i++) {
+    if (i < 8) {
+        group1[i] = generatePosition()
+    }
+
+    if (i > 8) {
+        group2[i] = generatePosition()
+    }
 }
 
-
-
-console.log(generatePosition())
+// à chaque tour il faut veiller à ce qu'un nombre soit différent
+console.log(group1)
+console.log(group2)
