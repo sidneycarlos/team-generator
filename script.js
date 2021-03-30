@@ -20,18 +20,37 @@ function generateNumber() {
 console.log(generateNumber())
 
 
-function generateGroup() {
+/*function generateGroup() {
     for (let i = 0; i < number.length; i++) {
+        var attdList = attd[number[i]];
         if (i <= 7) {
-            group1[i] = attd[number[i]]
+            group1[i] = attdList
         }
         if (i >= 8) {
-            group2[i] = attd[number[i]]
+            group2[i] = attdList
         }
 
-    }
-    console.log(`Ceci est le groupe 1: ${group1}`)
-    console.log(`Ceci est le groupe 2: ${group2}`)
-}
+    }*/
 
-generateGroup()
+function generateGroup1() {
+    for (let i = 0; i < number.length; i++) {
+        var attdList = attd[number[i]];
+        if (i <= 7) {
+            group1[i] = attdList
+        }
+    }
+    return group1    
+
+}
+console.log(generateGroup1(generateNumber()));
+
+function generateGroup2() {
+    for (let i = 8; i < number.length ; i++) {
+        var attdList2 = attd[number[i]];
+        group2[i] = attdList2
+    }
+    return group2
+}    
+console.log(generateGroup2(generateNumber()));
+
+console.log(group2[10])
