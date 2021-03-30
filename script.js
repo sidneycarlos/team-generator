@@ -35,3 +35,5 @@ for (let i = 0; i < 14; i++) {
 // à chaque tour il faut veiller à ce qu'un nombre soit différent
 console.log(group1)
 console.log(group2)
+
+//TODO essayer de passer dans la variable attd avec une boucle for...in
