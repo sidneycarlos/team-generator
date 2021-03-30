@@ -11,7 +11,7 @@ var group2 = [];
 
 function generateNumber() {
     while (number.length < 15) {
-        var randomiser = Math.floor(Math.random()*15);
+        var randomiser = Math.floor(Math.random()*15)+1;
         if (number.indexOf(randomiser) === -1) number.push(randomiser)
     }
     
@@ -19,13 +19,14 @@ function generateNumber() {
 }
 console.log(generateNumber())
 
+
 function generateGroup() {
     for (let i = 0; i < number.length; i++) {
         if (i <= 7) {
-            group1[i] = number[i]
+            group1[i] = attd[number[i]]
         }
-        if (i > 7) {
-            group2[i] = number[i]
+        if (i >= 8) {
+            group2[i] = attd[number[i]]
         }
 
     }
@@ -34,4 +35,3 @@ function generateGroup() {
 }
 
 generateGroup()
-
