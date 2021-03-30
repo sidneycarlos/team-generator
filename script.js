@@ -6,8 +6,10 @@ var attd = {
     11 : "Noureddine", 12 : "Lucas", 13 : "Raphael", 14 : "Valentin", 15 : "Sidney"
 }
 var number = [];
-var group1 = [];
-var group2 = [];
+var groupIndex1 = [];
+var groupIndex2 = [];
+var groupNamed1 = [];
+var groupNamed2 = [];
 
 function generateNumber() {
     while (number.length < 15) {
@@ -17,21 +19,30 @@ function generateNumber() {
     
        return number;
 }
-console.log(generateNumber())
 
 
-/*function generateGroup() {
-    for (let i = 0; i < number.length; i++) {
-        var attdList = attd[number[i]];
-        if (i <= 7) {
-            group1[i] = attdList
-        }
-        if (i >= 8) {
-            group2[i] = attdList
-        }
+function generateGroupName1() {
+    groupIndex1 = number.slice(0, 8)
+    for (let i = 0; i < groupIndex1.length; i++) {
+        var attdList = attd[groupIndex1[i]];
+        groupNamed1[i] = attdList
+    }
+    return groupNamed1    
 
-    }*/
+}
+console.log(generateGroupName1(generateNumber()));
 
+function generateGroupName2() {
+    groupIndex2 = number.slice(8, 15)
+    for (let i = 0; i < groupIndex2.length ; i++) {
+        var attdList2 = attd[groupIndex2[i]];
+        groupNamed2[i] = attdList2
+    }
+    return groupNamed2
+}    
+console.log(generateGroupName2(generateNumber()));
+
+/*
 function generateGroup1() {
     for (let i = 0; i < number.length; i++) {
         var attdList = attd[number[i]];
@@ -53,4 +64,4 @@ function generateGroup2() {
 }    
 console.log(generateGroup2(generateNumber()));
 
-console.log(group2[10])
+console.log(group2[0])*/
