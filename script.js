@@ -13,6 +13,27 @@ var groupIndex2 = [];
 var groupNamed1 = [];
 var groupNamed2 = [];
 
+
+var framePresentiel = document.getElementById("here");
+var frameDistanciel = document.getElementById("distant");
+var bouton = document.getElementById("generator");
+
+function addElement () {
+    var ul = document.createElement("ul");
+    var li = document.createElement("li");
+    ul.appendChild(li);
+
+    var div = document.getElementById("result");
+    document.body.insertBefore(ul, div);
+
+}
+addElement()
+
+bouton.addEventListener("click", function() {
+    framePresentiel.innerText = generateGroupName1(generateNumber())
+    frameDistanciel.innerText = generateGroupName2(generateNumber())
+})
+
 function generateNumber() {
     while (number.length < 15) {
         var randomiser = Math.floor(Math.random() * 15) + 1;
@@ -41,27 +62,3 @@ function generateGroupName2() {
     return groupNamed2
 }
 console.log(generateGroupName2(generateNumber()));
-
-/*
-function generateGroup1() {
-    for (let i = 0; i < number.length; i++) {
-        var attdList = attd[number[i]];
-        if (i <= 7) {
-            group1[i] = attdList
-        }
-    }
-    return group1
-
-}
-console.log(generateGroup1(generateNumber()));
-
-function generateGroup2() {
-    for (let i = 8; i < number.length ; i++) {
-        var attdList2 = attd[number[i]];
-        group2[i] = attdList2
-    }
-    return group2
-}
-console.log(generateGroup2(generateNumber()));
-
-console.log(group2[0])*/
