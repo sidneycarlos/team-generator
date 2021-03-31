@@ -10,6 +10,14 @@ var groupIndex1 = [];
 var groupIndex2 = [];
 var groupNamed1 = [];
 var groupNamed2 = [];
+var presentiel = document.getElementById("here");
+var distanciel = document.getElementById("distant");
+var actionGen = document.getElementById("generator");
+
+actionGen.addEventListener("click", function() {
+    generateGroupName1(generateNumber());
+    generateGroupName2(generateNumber());
+})
 
 function generateNumber() {
     while (number.length < 15) {
@@ -30,7 +38,7 @@ function generateGroupName1() {
     return groupNamed1    
 
 }
-console.log(generateGroupName1(generateNumber()));
+//console.log(generateGroupName1(generateNumber()));
 
 function generateGroupName2() {
     groupIndex2 = number.slice(8, 15)
@@ -40,7 +48,7 @@ function generateGroupName2() {
     }
     return groupNamed2
 }    
-console.log(generateGroupName2(generateNumber()));
+//console.log(generateGroupName2(generateNumber()));
 
 /*
 function generateGroup1() {
