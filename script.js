@@ -12,53 +12,41 @@ var groupIndex1 = [];
 var groupIndex2 = [];
 var groupNamed1 = [];
 var groupNamed2 = [];
-
-
 var framePresentiel = document.getElementById("here");
 var frameDistanciel = document.getElementById("distant");
 var bouton = document.getElementById("generator");
 
-function addElement () {
-    var ul = document.createElement("ul");
-    var li = document.createElement("li");
-    ul.appendChild(li);
-
-    var div = document.getElementById("result");
-    document.body.insertBefore(ul, div);
-
-}
-addElement()
-
+//démarrer la génération de groupe par le clic
 bouton.addEventListener("click", function() {
-    framePresentiel.innerText = generateGroupName1(generateNumber())
-    frameDistanciel.innerText = generateGroupName2(generateNumber())
+    framePresentiel.innerText = getGroupName1(getNumber())
+    frameDistanciel.innerText = getGroupName2(getNumber())
+    framePresentiel.style.listStyleType="circle"
 })
-
-function generateNumber() {
-    while (number.length < 15) {
-        var randomiser = Math.floor(Math.random() * 15) + 1;
-        if (number.indexOf(randomiser) === -1) number.push(randomiser)
+//Récupérer des nombres aléatoires
+function getNumber() {
+    while (number.length < 15) { // générer une liste de 15 valeurs
+        var randomiser = Math.floor(Math.random() * 15) + 1; //générer 15 nombres aléatoires partant du chiffre 1 qui serviront d'index
+        if (number.indexOf(randomiser) === -1) number.push(randomiser) //gérer les doublons
     }
     return number;
 }
 
-function generateGroupName1() {
-    groupIndex1 = number.slice(0, 8)
+//Récupérer une partie de la liste
+function getGroupName1() {
+    groupIndex1 = number.slice(0, 8) //stocker les 8 premiers index
     for (let i = 0; i < groupIndex1.length; i++) {
-        var attdList = attd[groupIndex1[i]];
+        var attdList = attd[groupIndex1[i]]; //passer dans le tableau et donner la valeur de chaque index(prénom)
         groupNamed1[i] = attdList
     }
     return groupNamed1
-
 }
-console.log(generateGroupName1(generateNumber()));
 
-function generateGroupName2() {
-    groupIndex2 = number.slice(8, 15)
+//Récupérer l'autre partie de la liste
+function getGroupName2() {
+    groupIndex2 = number.slice(8, 15) //stocker les 7 derniers index
     for (let i = 0; i < groupIndex2.length; i++) {
-        var attdList2 = attd[groupIndex2[i]];
+        var attdList2 = attd[groupIndex2[i]]; //passer dans le tableau et donner la valeur de chaque index (prénom)
         groupNamed2[i] = attdList2
     }
     return groupNamed2
 }
-console.log(generateGroupName2(generateNumber()));
