@@ -18,9 +18,17 @@ var bouton = document.getElementById("generator");
 
 //démarrer la génération de groupe par le clic
 bouton.addEventListener("click", function() {
-    framePresentiel.innerText = getGroupName1(getNumber())
-    frameDistanciel.innerText = getGroupName2(getNumber())
-    framePresentiel.style.listStyleType="circle"
+    framePresentiel.innerText = getGroupName1(getNumber());
+    frameDistanciel.innerText = getGroupName2(getNumber());
+    framePresentiel.style.backgroundColor="white";
+    framePresentiel.style.padding="10px 15px"
+    framePresentiel.style.opacity="0.9"
+    framePresentiel.style.color="#7F3FBF"
+    frameDistanciel.style.backgroundColor="white";
+    frameDistanciel.style.padding="10px 15px"
+    frameDistanciel.style.opacity="0.9"
+    frameDistanciel.style.color="#7F3FBF"
+
 })
 //Récupérer des nombres aléatoires
 function getNumber() {
