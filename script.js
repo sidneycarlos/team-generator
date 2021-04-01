@@ -20,7 +20,8 @@ var bouton = document.getElementById("generator");
 bouton.addEventListener("click", function() {
     framePresentiel.innerText = getGroupName1(getNumber())
     frameDistanciel.innerText = getGroupName2(getNumber())
-    framePresentiel.style.listStyleType="circle"
+    framePresentiel.style.color="yellow"
+    framePresentiel.style.backgroundColor="blue"
 })
 //Récupérer des nombres aléatoires
 function getNumber() {
