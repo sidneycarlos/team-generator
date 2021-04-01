@@ -1,0 +1,58 @@
+body{
+    background-color: rgb(214, 203, 223);
+    width: 60%;
+    height: 100%;
+    margin:auto;
+    color: blueviolet;
+}
+
+.logo{
+    opacity : 0.5*
+}
+
+h2{
+    text-align: center;
+}
+
+.operation{
+    border: 1px blueviolet solid;
+    text-align: justify;
+}
+
+#generator{
+    background-color :mediumpurple;
+    color : white;
+    border-color: white;
+    border-radius: 10%;
+}
+
+.result{
+    text-align: center;
+}
+
+#here{
+    color : blueviolet;
+    border-color: blueviolet;
+    border-radius: 10%;
+    height: 70%;
+    width: 20%;
+
+}
+
+#distant{
+    color : blueviolet;
+    border-color: blueviolet;
+    border-radius: 10%;
+    height: 70%;
+    width: 20%;
+}
+
+.promo{
+    margin-bottom : 100%;
+    text-align: center;
+}
+
+.promo img{
+    width: 30%;
+    height: 30%;
+}
