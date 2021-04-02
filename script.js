@@ -1,13 +1,5 @@
 //stockage des participants dans une variable
 
-<<<<<<< HEAD
-var attd = {
-    1: "Alexandre", 2: "Fanny", 3: "Tamara", 4: "Marylise", 5: "Maxime",
-    6: "Laurène", 7: "Yohan", 8: "Juan", 9: "Maïalen", 10: "Vincent",
-    11: "Noureddine", 12: "Lucas", 13: "Raphael", 14: "Valentin", 15: "Sidney"
-}
-
-=======
 var trainees = [
     "Alexandre", "Fanny", "Tamara",
     "Marylise", "Maxime", "Laurène",
@@ -15,7 +7,6 @@ var trainees = [
     "Vincent", "Noureddine", "Lucas",
     "Raphael", "Valentin", "Sidney"
 ]
->>>>>>> fixJS
 
 var number = [];
 var names = [];
