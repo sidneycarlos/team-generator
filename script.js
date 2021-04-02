@@ -1,87 +1,92 @@
 //stockage des participants dans une variable
 
+<<<<<<< HEAD
 var attd = {
     1: "Alexandre", 2: "Fanny", 3: "Tamara", 4: "Marylise", 5: "Maxime",
     6: "Laurène", 7: "Yohan", 8: "Juan", 9: "Maïalen", 10: "Vincent",
     11: "Noureddine", 12: "Lucas", 13: "Raphael", 14: "Valentin", 15: "Sidney"
 }
 
+=======
+var trainees = [
+    "Alexandre", "Fanny", "Tamara",
+    "Marylise", "Maxime", "Laurène",
+    "Yohan", "Juan", "Maïalen",
+    "Vincent", "Noureddine", "Lucas",
+    "Raphael", "Valentin", "Sidney"
+]
+>>>>>>> fixJS
 
 var number = [];
-var groupIndex1 = [];
-var groupIndex2 = [];
-var groupNamed1 = [];
-var groupNamed2 = [];
-var framePresentiel = document.getElementById("here");
-var frameDistanciel = document.getElementById("distant");
+var names = [];
+var presentiel = document.getElementById("here");
+var distanciel = document.getElementById("distant");
 var bouton = document.getElementById("generator");
-
-//démarrer la génération de groupe par le clic
-bouton.addEventListener("click", function () {
-    framePresentiel.innerText = getGroupName1(getNumber());
-    frameDistanciel.innerText = getGroupName2(getNumber());
-
-    function styleOfBlocks() {
-        framePresentiel.style.backgroundColor = "white";
-        framePresentiel.style.padding = "10px 15px"
-        framePresentiel.style.opacity = "0.9"
-        framePresentiel.style.color = "#7F3FBF"
-        frameDistanciel.style.backgroundColor = "white";
-        frameDistanciel.style.padding = "10px 15px"
-        frameDistanciel.style.opacity = "0.9"
-        frameDistanciel.style.color = "#7F3FBF"
-    }
-    styleOfBlocks()
-
-})
+var reset = document.getElementById("reset")
 
 
 
-//Récupérer des nombres aléatoires
-function getNumber() {
+/**
+ * Récupère 15 nombres
+ * @returns les nombres dans un ordre aléatoire
+ */
+function getNumbers() {
     while (number.length < 15) { // générer une liste de 15 valeurs
-        var randomiser = Math.floor(Math.random() * 15) + 1; //générer 15 nombres aléatoires partant du chiffre 1 qui serviront d'index
+        var randomiser = Math.floor(Math.random() * 15); //générer 15 nombres aléatoires qui serviront d'index
         if (number.indexOf(randomiser) === -1) number.push(randomiser) //gérer les doublons
     }
     return number;
 }
 
-//Récupérer une partie de la liste
-function getGroupName1() {
-    groupIndex1 = number.slice(0, 8) //stocker les 8 premiers index
-    for (let i = 0; i < groupIndex1.length; i++) {
-        var attdList = attd[groupIndex1[i]]; //passer dans le tableau et donner la valeur de chaque index(prénom)
-        groupNamed1[i] = attdList
+/**
+ * Récupère les noms dans le nouvel ordre
+ * @param {*} groupIndex correspond à la liste des index aléatoires
+ * @returns les noms des stagiaires dans l'ordre aléatoire
+ */
+function getNames(groupIndex) {
+    for (let i = 0; i < groupIndex.length; i++) {
+        names[i] = trainees[groupIndex[i]]; //passer dans le tableau et donner la valeur de chaque index(prénom)
     }
-    return groupNamed1
+    return names;
 }
 
-//Récupérer l'autre partie de la liste
-function getGroupName2() {
-    groupIndex2 = number.slice(8, 15) //stocker les 7 derniers index
-    for (let i = 0; i < groupIndex2.length; i++) {
-        var attdList2 = attd[groupIndex2[i]]; //passer dans le tableau et donner la valeur de chaque index (prénom)
-        groupNamed2[i] = attdList2
-    }
-    return groupNamed2
+/**
+ * Récupère la liste selon les index
+ * @param {*} arr liste des noms aléatoires
+ * @param {*} minIndex index de début de la liste
+ * @param {*} maxIndex index de fin de la liste
+ * @returns un groupe selon l'index de début et l'index de fin
+ */
+function divideInGroups(arr, minIndex, maxIndex) {
+    var groups = arr.slice(minIndex, maxIndex)
+    return groups
 }
 
 
-//récupérer le nom de attd qui correspond aux index de 8 à 15
-function getAGroup() {
-    groupIndex2 = number.slice(8, 15) //stocker les 7 derniers index
-    for (let i = 0; i < groupIndex2.length; i++) {
-        for (let j in attd) {
-            attd.name.i = attd[groupIndex2[i]]
+//démarrer la génération de groupe par le clic
+bouton.addEventListener("click", () => {
+    presentiel.innerText = divideInGroups(getNames(getNumbers()), 0, 8);;
+    distanciel.innerText = divideInGroups(getNames(getNumbers()), 8, 15);
+    presentiel.style.backgroundColor = "white";
+    presentiel.style.padding = "10px 15px"
+    presentiel.style.opacity = "0.9"
+    presentiel.style.color = "#black"
+    distanciel.style.backgroundColor = "white";
+    distanciel.style.padding = "10px 15px"
+    distanciel.style.opacity = "0.9"
+    distanciel.style.color = "#black"
+})
 
-        }
-        var attdList2 = attd[groupIndex2[i]]; //passer dans le tableau et donner la valeur de chaque index (prénom)
-        groupNamed2[i] = attdList2
+//réinitialisation des résultats par le clic
+reset.addEventListener("click", () => {
+    if (number.length == 15) {
+        number = []
     }
-    return groupNamed2
-}
+})
+
+
 /** A implémenter dans le code
- * var attd = [
+ * var trainees = [
     {id :1, name: "Alexandre", gender : "M", availability: {monday:true, tuesday:true, wednesday:true,thursday:true, friday:true}, partner: "N"},
     {id :2, name: "Fanny", gender : "F", availability: {monday:true, tuesday:true, wednesday:true,thursday:true, friday:true}, partner: "N"},
     {id :3, name: "Tamara", gender : "F", availability: {monday:true, tuesday:true, wednesday:true,thursday:true, friday:true}, partner: "N"},
