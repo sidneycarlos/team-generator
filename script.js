@@ -1,3 +1,5 @@
+//EXCEPTION #1 gestion de l'exception Tamara
+
 //stockage des participants dans une variable
 
 var trainees = [
