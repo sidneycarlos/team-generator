@@ -1,12 +1,5 @@
 //stockage des participants dans une variable
 
-var trainees = [
-    "Alexandre", "Fanny", "Tamara",
-    "Marylise", "Maxime", "Laurène",
-    "Yohan", "Juan", "Maïalen",
-    "Vincent", "Noureddine", "Lucas",
-    "Raphael", "Valentin", "Sidney"
-]
 
 var number = [];
 var names = [];
@@ -14,6 +7,12 @@ var presentiel = document.getElementById("here");
 var distanciel = document.getElementById("distant");
 var bouton = document.getElementById("generator");
 var reset = document.getElementById("reset")
+
+
+function getStudents() {
+    var students = []
+    return students
+}
 
 
 
