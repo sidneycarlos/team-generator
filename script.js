@@ -9,11 +9,14 @@ var bouton = document.getElementById("generator");
 var reset = document.getElementById("reset")
 
 
+/**
+ * Récupère une liste des stagiaires
+ * @returns la liste
+ */
 function getStudents() {
     var students = []
     return students
 }
-
 
 
 /**
@@ -35,7 +38,7 @@ function getNumbers() {
  */
 function getNames(groupIndex) {
     for (let i = 0; i < groupIndex.length; i++) {
-        names[i] = trainees[groupIndex[i]]; //passer dans le tableau et donner la valeur de chaque index(prénom)
+    names[i] = getStudents()[groupIndex[i]]; //passer dans le tableau et donner la valeur de chaque index(prénom)
     }
     return names;
 }
