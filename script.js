@@ -14,9 +14,9 @@ var reset = document.getElementById("reset")
  * @returns la liste
  */
 
-function getStudents() {
+function getStudents(callback) {
     var students = ["titi", "toto", "tutu"]
-    return students
+    callback(students)
 }
 
 /**
