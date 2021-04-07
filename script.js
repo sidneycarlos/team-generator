@@ -10,14 +10,53 @@ var reset = document.getElementById("reset")
 
 
 /**
- * Récupère une liste des stagiaires
+ * Récupère une liste des stagiaires ****SYNCHRONE*****
  * @returns la liste
  */
-function getStudents() {
-    var students = []
+
+function student() {
+    return ["sidney", "val"]
+}
+
+let localList = getDefaultStudent()
+
+function getStudents(callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", reqListener);
+    xhr.open("GET", "https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/XMLHttpRequest");
+    xhr.send();
+    callback(xhr);
+}
+
+getStudent
+
+/*
+function generate(students){
+    ///code de génération
     return students
 }
 
+function updateView(g) {
+    ///code de maj de la vue
+    console.log("updateview")
+
+}
+
+//préparation de l'asynchronisme => fonction de callback
+getStudents(function(stu) {
+    updateView(generate(stu))
+})
+
+console.log("main program async")
+
+function reqListener (){
+    console.log(this.responseText);
+} */
+/*
+var xhr = new XMLHttpRequest();
+xhr.addEventListener("load", reqListener);
+xhr.open("GET", "https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/XMLHttpRequest");
+xhr.send();*/
 
 /**
  * Récupère 15 nombres
@@ -38,7 +77,7 @@ function getNumbers() {
  */
 function getNames(groupIndex) {
     for (let i = 0; i < groupIndex.length; i++) {
-    names[i] = getStudents()[groupIndex[i]]; //passer dans le tableau et donner la valeur de chaque index(prénom)
+        names[i] = getStudents()[groupIndex[i]]; //passer dans le tableau et donner la valeur de chaque index(prénom)
     }
     return names;
 }
