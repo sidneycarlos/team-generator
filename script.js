@@ -50,7 +50,7 @@ function getNumbers() {
  * @param {*} maxIndex index de fin de la liste
  * @returns un groupe selon l'index de début et l'index de fin
  */
-function divideInGroups(arr, minIndex, maxIndex) {
+ function divideInGroups(arr, minIndex, maxIndex) {
     var groups = arr.slice(minIndex, maxIndex)
     return groups
 }
@@ -58,8 +58,11 @@ function divideInGroups(arr, minIndex, maxIndex) {
 
 //démarrer la génération de groupe par le clic
 bouton.addEventListener("click", () => {
-    presentiel.innerText = divideInGroups(getNames(getNumbers()), 0, 8);;
-    distanciel.innerText = divideInGroups(getNames(getNumbers()), 8, 15);
+    getStudents((stu)=> {
+        presentiel.innerText = divideInGroups(getNames(getNumbers(),stu), 0, 8);
+        distanciel.innerText = divideInGroups(getNames(getNumbers(),stu), 8, 15);
+    })
+    
     presentiel.style.backgroundColor = "white";
     presentiel.style.padding = "10px 15px"
     presentiel.style.opacity = "0.9"
