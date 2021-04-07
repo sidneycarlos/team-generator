@@ -36,9 +36,9 @@ function getNumbers() {
  * @param {*} groupIndex correspond à la liste des index aléatoires
  * @returns les noms des stagiaires dans l'ordre aléatoire
  */
-function getNames(groupIndex) {
+ function getNames(groupIndex, gettedList) {
     for (let i = 0; i < groupIndex.length; i++) {
-        names[i] = getStudents()[groupIndex[i]]; //passer dans le tableau et donner la valeur de chaque index(prénom)
+        names[i] = gettedList[groupIndex[i]]; //passer dans le tableau et donner la valeur de chaque index(prénom)
     }
     return names;
 }
