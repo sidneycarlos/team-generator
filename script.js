@@ -1,6 +1,4 @@
 //stockage des participants dans une variable
-
-
 var number = [];
 var names = [];
 var presentiel = document.getElementById("here");
@@ -14,9 +12,18 @@ var reset = document.getElementById("reset")
  * @returns la liste
  */
 
-function getStudents(callback) {
-    var students = ["titi", "toto", "tutu"]
-    callback(students)
+ function getStudents(callback){
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("GET","http://localhost:3009/students");
+    xhr.onload = ()=>{
+        callback(JSON.parse(xhr.responseText));
+    }
+    xhr.onerror = ()=>{
+        callback(students);
+    }
+    xhr.send();
 }
 
 /**
@@ -33,8 +40,9 @@ function getNumbers() {
 
 /**
  * Récupère les noms dans le nouvel ordre
- * @param {*} groupIndex correspond à la liste des index aléatoires
- * @returns les noms des stagiaires dans l'ordre aléatoire
+ * @param {*} groupIndex liste des index aléatoires
+ * @param {*} gettedList liste récupérée
+ * @returns noms des stagiaires dans l'ordre aléatoire
  */
  function getNames(groupIndex, gettedList) {
     for (let i = 0; i < groupIndex.length; i++) {
