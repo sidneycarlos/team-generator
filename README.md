@@ -1,4 +1,4 @@
-# Projet TEAM_GENERATOR
+# Projet TEAM_GENERATOR - 1er projet
 
 Le Team Generator est un outil qui permet de fabriquer des groupes pour l'organisation des cours de notre formation Développeur web et web mobile.
 
@@ -49,14 +49,3 @@ Dans le cadre des directives sanitaires liées au Covid-19:
     </li>
 </ol><br/>
 
-## Chacun prend une partie :
-
-- Sidney plutôt JS
-- Laurène plutôt HTML/CSS
-- LE TRAVAIL SERA FAIT EN COOPÉRATION MAIS AVEC CHACUN DES MISSIONS DISTINCTES
-
-## Retour Utilisateur 
-
-- La déco est chouette mais malheureusement, votre logiciel ne fonctionne pas... je n'ai pas d'affichage de mes groupes sur mon interface, même si on voit que la génération marche dans la console. 
-- Il serait une bonne idée de modifier le curseur de la souris au survol de votre bouton.
-Dire que j'ai payé 3500€ pour avoir un jolie fond étoilé ...
